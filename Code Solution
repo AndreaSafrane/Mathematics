@@ -1,0 +1,24 @@
+#Input Format: 
+#Two inputs: an integer and a space separated string of math expressions. The following operations need to be supported: addition +, subtraction -, multiplication *, division /. 
+#An expression can include multiple operations.
+
+#Output Format: 
+#A string that tells the index of the first math expression that matches. If there are no matches, output 'none'.
+
+result = int(input())
+
+expr = input()
+
+list = expr.split()
+
+nope = []
+
+for i, j in enumerate(list):
+    j = eval(j)
+    if j == result:
+        print("index", i)
+    else:
+        nope.append(i)
+        
+if len(nope) == len(list):
+    print("none")
